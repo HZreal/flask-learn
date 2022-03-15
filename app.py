@@ -1,7 +1,5 @@
 from flask import Flask
 import settings
-from singlefile_blueprint import user_bp
-from package_blueprint import goods_bp
 
 print('-----当前文件名------', __name__)
 # 初始化Flask对象，参数如下:
@@ -12,11 +10,6 @@ print('-----当前文件名------', __name__)
 app = Flask(__name__, static_url_path='/static', static_folder='static', template_folder='templates')
 
 
-# 注册蓝图
-app.register_blueprint(user_bp, url_prefix='/user')   # 注册单文件蓝图
-app.register_blueprint(goods_bp, url_prefix='/goods')   # 注册包蓝图
-
-
 # flask配置:字典的形式访问设置
 # app.config.get(key)
 # app.config[key]
@@ -24,10 +17,12 @@ app.register_blueprint(goods_bp, url_prefix='/goods')   # 注册包蓝图
 # 方式一、从配置对象中加载(可继承复用，但一些敏感数据暴露在代码中，用于一些默认配置)
 class FlaskDevConfig:
     SECRET_KEY = 'TPmi4aLWRbyVq8zu9v82dWYW1'
-    DEBUG = True
+    DEBUG = True    # DEBUG模式开启:后端出错会直接返回真实具体的错误信息给前端(反之关闭DEBUG模式前端只会显示Internal Server Error)，代码修改自动重启
 app.config.from_object(FlaskDevConfig)
+
 # 方式二、从配置文件中加载(配置文件独立，保护敏感配置数据，但无法继承，且配置文件目录固定在代码中不灵活)
 # app.config.from_pyfile('settings.py')
+
 # 方式三、从环境变量中加载，实际也是读取配置文件，只是配置文件名保存在OS环境中(配置文件独立，保护敏感配置数据，配置文件目录不固定灵活，只需指定环境变量名及配置路径即可在多处配置好启动；不方便，得记得环境变量名并设置)
 # app.config.from_envvar('FLASK_ENV_NAME')    # pycharm启动时需要在配置里指定
 # app.config.from_envvar('FLASK_ENV_NAME', silent=False)  # silent指定当系统环境变量中没有设置相应值时是否抛出异常，默认False，报错通知无此环境，True忽略 则继续运行
@@ -37,11 +32,11 @@ app.config.from_object(FlaskDevConfig)
 # 然后终端执行 python3 app.py 运行
 
 
+
 @app.route('/')
 def hello_world():
     print('SECRET_KEY--------', app.config.get('SECRET_KEY'))
     return 'Hello World!'
-
 
 
 
