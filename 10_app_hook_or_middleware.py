@@ -47,19 +47,21 @@ def before_request():
 @app.after_request
 def after_request(response: Response):
     print("after_request-----------------------")
-    response.headers["Content-Type"] = "application/json"
-    response.set_cookie('username', 'huang', max_age=3600)
+    # response.headers["Content-Type"] = "application/json"
+    # response.set_cookie('username', 'huang', max_age=3600)
     return response
 
 
 # 请每一次请求之后都会调用，会接受一个参数，参数是服务器出现的错误信息
 @app.teardown_request
-def teardown_request(response):
+def teardown_request(e):
+    print(e, type(e))
     print("teardown_request-----------------------")
 
 
 @app.route('/test_middleware')
 def test_middleware():
+    b = 1 / 0
     a = 1
     print('view function is called------', a)
     return json.dumps({'a': a})       # body数据为JSON字符串，此时Content-Type=text/html，并未设置Content-Type=application/json

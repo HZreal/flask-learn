@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_restful import Api, Resource, reqparse
+from flask_restful import Api, Resource
 from restful_blueprint import user_bp
 
 
@@ -79,10 +79,5 @@ class AddDecoratorResource(Resource):
 api.add_resource(AddDecoratorResource, '/class_decorator')
 
 
-
-# Flask-RESTful 提供了RequestParser类，用来帮助我们检验和转换请求数据。类似于DRF序列化器的校验
-parser = reqparse.RequestParser()
-# 声明校验参数
-parser.add_argument('username', type=str, )
 
 
