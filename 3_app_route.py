@@ -36,7 +36,7 @@ def login():
 
 
 
-# 获取pp.url_map时必须在所有url/view之后
+# 获取app.url_map时必须在所有url/view之后
 for rule in app.url_map.iter_rules():
     print('view:{} path:{}'.format(rule.endpoint, rule.rule))
 
