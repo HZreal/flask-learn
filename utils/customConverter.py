@@ -15,3 +15,7 @@ class CodeConverter(BaseConverter):
     pass
 
 
+class EmailConverter(BaseConverter):
+    pass
+
+

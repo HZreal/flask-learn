@@ -80,8 +80,7 @@ def user_profile():
 
 
 # g对象与请求钩子的结合
-# 需求
-# 构建认证机制
+# 需求: 构建认证机制
 # 对于特定视图需要要求用户登录才能访问     --------> 使用装饰器
 # 对于所有视图，无论是否要求用户登录，都可以在视图中尝试获取用户认证后的身份信息     ---------> 使用请求钩子
 # 逻辑： 在请求钩子before_request中进行用户登录认证，并将用户信息(未认证则是None)写入g对象，然后进入视图
@@ -95,10 +94,10 @@ def login_required(func):
     """
     def wrapper(*args, **kwargs):
         # 判断用户是否登录认证
-        if g.user_id is None:
+        if g.user_id is None:                 # 未能在g中获取到user_id，表示认证失败，抛出401
             abort(401)
         else:
-            return func(*args, **kwargs)
+            return func(*args, **kwargs)      # 能在g中获取到user_id，表示认证已通过，可以进入视图即可以执行fun()
 
     return wrapper
 
@@ -110,7 +109,7 @@ def authentication():
     """
     # TODO 此处利用鉴权机制（如cookie、session、jwt等）鉴别用户身份信息
     # if 已登录用户，用户有身份信息
-    g.user_id = 123
+    g.user_id = 123                    # 向g中写入user_id表示认证成功
     # else 未登录用户，用户无身份信息
     # g.user_id = None
 
@@ -122,6 +121,10 @@ def index():
 @login_required       # 登录要求装饰器，补充视图逻辑，因此在route装饰器之前
 def user_info():
     return 'login required page'
+
+
+
+
 
 
 

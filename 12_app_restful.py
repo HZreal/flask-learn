@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 api = Api(app)   # Api对象相当于收集类视图、url并建立关联后，传给Flask app
 
-class UseFlaskRestfulDemo(Resource):
+class UseFlaskRestfulView(Resource):
     def get(self):
         return {'code': 0, 'msg': 'success'}
 
@@ -17,7 +17,7 @@ class UseFlaskRestfulDemo(Resource):
         return {'code': 0, 'msg': 'success'}
 
 # 建立类视图与url的关联
-api.add_resource(UseFlaskRestfulDemo, '/demo', endpoint='restful-demo')
+api.add_resource(UseFlaskRestfulView, '/demo', endpoint='restful-demo')
 
 
 
@@ -44,9 +44,12 @@ def decorator2(func):
 
 
 class AddDecoratorResource(Resource):
-    """添加装饰器的类视图"""
-    # 列表式添加：不区分请求方式，所有的都被装饰，decorator1先被装饰(装饰过程仅返回wrapper函数)，decorator2先被执行(实际是内部的wrapper函数先被执行)
-    method_decorators = [decorator1, decorator2]
+    """
+    添加装饰器的类视图
+    """
+    # 1. 为类视图中的所有方法添加装饰器
+    # a. 列表式添加：不区分请求方式，所有的都被装饰，decorator1先被装饰(装饰过程仅返回wrapper函数)，decorator2先被执行(实际是内部的wrapper函数先被执行)
+    # method_decorators = [decorator1, decorator2]
     # 装饰机制：
     # for dec in method_decorators:
     #     get = decorator1(get)
@@ -57,18 +60,22 @@ class AddDecoratorResource(Resource):
     #     @decorator1
     #     def get():
 
-    # 字典式添加：指定具体请求方式，加指定的装饰器
+    # b. 字典式添加：指定具体请求方式，加指定的装饰器
     # method_decorators = {
     #     'get': [decorator1, decorator2],
     #     'post': [decorator2],
     # }
 
 
+    # 2. 为类视图中不同的方法添加不同的装饰器
     # 使用了装饰器decorator1、decorator2
+    @decorator2
+    @decorator1
     def get(self):
         return {'code': 0, 'msg': 'success'}
 
     # 使用了装饰器decorator2
+    @decorator2
     def post(self):
         return {'code': 0, 'msg': 'success'}
 

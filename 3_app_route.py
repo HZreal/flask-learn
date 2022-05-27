@@ -12,10 +12,17 @@ app = Flask(__name__)
 
 
 
-# route装饰器函数
-# endpoint指定视图名，默认是函数名
-# 默认请求方式为GET、OPTIONS(简化版GET请求，询问服务器接口信息，是否允许跨域，返回允许的请求方式请求源等)、HEAD(简化版GET请求，返回GET请求处理后的响应头，而不返回响应体)
-# 更多参数均是werkzeug.routing.Rule对象的初始化参数，详看route装饰器源码
+# route为一个带参装饰器的实现，内部定义的decorator才是实际的装饰器
+# 装饰器参数:
+#         rule: url路径字符串
+#         endpoint: 视图名，默认是函数名
+#         methods: 请求方式，默认为GET、OPTIONS(简化版GET请求，询问服务器接口信息，是否允许跨域，返回允许的请求方式请求源等)、HEAD(简化版GET请求，返回GET请求处理后的响应头，而不返回响应体)
+#         host
+#         strict_slashes
+#         redirect_to
+#         websocket
+#           ...
+#         更多参数均是werkzeug.routing.Rule对象的初始化参数，详看route函数注释参数option标注
 @app.route('/', methods=['GET'], endpoint='route_map')
 def route_map():
     url_map: Map = app.url_map    # werkzeug.routing.Map Object

@@ -9,7 +9,7 @@ user_bp = Blueprint('user', __name__)
 user_api = Api(user_bp)
 
 
-class UseProfile(Resource):
+class UseProfileView(Resource):
     def get(self):
         return {'code': 0, 'msg': 'success'}
 
@@ -21,5 +21,5 @@ class UseProfile(Resource):
 
 
 # 建立类视图与url的关联
-user_api.add_resource(UseProfile, '/profile', endpoint='profile')
+user_api.add_resource(UseProfileView, '/profile', endpoint='profile')
 

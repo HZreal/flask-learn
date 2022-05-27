@@ -10,7 +10,7 @@ print('-----当前文件名------', __name__)
 app = Flask(__name__, static_url_path='/static', static_folder='static', template_folder='templates')
 
 
-# flask配置:字典的形式访问设置
+# flask配置:字典的形式访问配置key
 # app.config.get(key)
 # app.config[key]
 # 导入配置三种方式:

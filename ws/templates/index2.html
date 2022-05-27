@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WS connection</title>
+</head>
+<body>
+
+    <button onclick="openWSConnect()">Close ws connect</button>
+    <form action="" onsubmit="sendMessage(event)">
+        <input type="text" id="messageText" autocomplete="off"/>
+        <button>Send</button>
+    </form>
+    <button onclick="closeWSConnect()">Close ws connect</button>
+
+    <ul id='messages'>
+    </ul>
+
+<script type="text/javascript" charset="utf-8">
+    // 建立ws连接
+    var ws;
+    ws = new WebSocket("ws://127.0.0.1:5000/namespace")
+
+    // 接收到来自server端的数据时触发
+    ws.onmessage = function (event) {
+        var messages = document.getElementById('messages')
+        var message = document.createElement('li')
+        var content = document.createTextNode(event.data)
+        message.appendChild(content)
+        messages.appendChild(message)
+    };
+
+    // 发送
+    function sendMessage(event) {
+        var input = document.getElementById("messageText")
+        // ws发送数据
+        console.log("send data, ", input.value)
+        ws.send(input.value)
+        input.value = ''
+        event.preventDefault()
+    }
+
+    function openWSConnect() {
+        ws = new WebSocket("ws://localhost:5000")
+    }
+
+    function closeWSConnect() {
+        ws.close()
+    }
+
+</script>
+</body>
+</html>
