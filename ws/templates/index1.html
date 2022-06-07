@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WS connection</title>
+</head>
+<body>
+<button onclick="openWSconnect()">手动打开ws连接</button>
+<button onclick="closeWebSocket()">手动关闭ws连接</button>
+<div id="roomList"></div>
+<br/>
+<input type="text" placeholder="enter your name" id="nameText" autocomplete="off"/>
+<button onclick="enterRoom()">进入room</button>
+<button onclick="leaveRoom()">退出room</button>
+<br/>
+<form action="" onsubmit="sendMessage(event)">
+    <input type="text" placeholder="请输入发送的信息" id="messageText" autocomplete="off"/>
+    <button>Send Message</button>
+</form>
+
+<ul id='messages'>
+</ul>
+
+<script src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+        integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+        crossorigin="anonymous"></script>
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>#}
+<script type="text/javascript" charset="utf-8">
+    // socket.io client API doc: https://socket.io/docs/v4/client-api/
+
+    // var socket = io("http://127.0.0.1:5000/chat");
+    var socket = io("ws://127.0.0.1:5000/chat");
+    // var socket = io("ws://127.0.0.1:5000/chat", {
+    //     reconnectionDelayMax: 10000,                 // 重连时间间隔
+    //     auth: (cb) => {
+    //         cb(localStorage.getItem("token"));       // 带token
+    //     },
+    //     query: {
+    //         "username": "huang"                     // 查询参数
+    //     }
+    // });
+
+    // ws连接时触发
+    socket.on('connect', () => {
+        console.log('client connected, socket sessionID is -------', socket.id)
+        console.log('socket status is ', socket.connected)
+    });
+
+    // 连接出错时触发
+    socket.on("connect_error", () => {
+        // 一般连接出错会自动隔时重连，若是被server端拒绝，可更新认证凭证
+        // socket.auth.token = "abcd";
+
+        setTimeout(() => {
+            socket.connect();
+        }, 3000);
+    });
+
+    // ws断开时触发
+    socket.on('disconnect', (reason) => {
+        console.log('client disconnect for----------', reason)
+    });
+
+    // socket.emit('my event', {data: 'I\'m connected!'});
+
+    // 注册事件news，监听接收来自server端的数据
+    socket.on('news', (data) => {
+        console.log('get message from server, receive data is ---->  ', data)
+
+        var messages = document.getElementById('messages')
+        var message = document.createElement('li')
+        var content = document.createTextNode(data.data)
+        message.appendChild(content)
+        messages.appendChild(message)
+        return 'client received, ACK for server '
+    })
+
+    function sendMessage(event) {
+        var input = document.getElementById("messageText")
+        // ws发送数据
+        console.log("send input data ---->  ", input.value)
+        // socket.send([...args][, ack])                       // 事件名固定为message
+        // socket.send(input.value)
+        // socket.send({data: input.value})
+        // socket.emit(eventName[, ...args][, ack])            // 指定事件名，参数args接收任意类型，回调函数ack即(res) => {}
+        // socket.emit('news', input.value)                    // 发送str
+        socket.emit('news', {data: input.value})            // 发送json
+        // socket.emit('news', 1, 'haha', {data: input.value})            // 发送多个数据
+        // socket.emit('news1', input.value, function ACK(msg, is_recv)  {            // ACK回调，表示此emit发送后，若服务端接收并ack回应，客户端就知道此emit的发送被服务端成功接收
+        //     // 参数res接收server端的ACK应答，注意是本事件处理函数的返回值数据，而不是服务端通过emit发送给客户端的数据，若返回多个数据，则此处应多个参数接收
+        //     console.log('ACK from server, data receive correctly? ---->  ', is_recv)
+        //     if (is_recv) {
+        //         // is_recv=true  表示服务端已成功接收，完毕
+        //         console.log('msg --', msg)
+        //     }else {
+        //         // is_recv=false  表示服务端未正常接收，可重emit等操作
+        //         console.log('msg --', msg)
+        //         socket.emit('news1', input.value)
+        //     }
+        // })
+        input.value = ''
+        event.preventDefault()
+    }
+
+    function enterRoom() {
+        var input = document.getElementById("nameText")
+        if (input.value) {
+            // 请求进入房间
+            socket.emit('join', {
+                username: input.value,
+            }, (is_enter) => {
+                if (is_enter) { alert('you have entered !') }
+                else { alert('wrong with something') }
+            });
+        } else {
+            alert('input your name first, please ! ')
+        }
+
+    }
+
+    socket.on('join_res', (msg) => {
+        console.log('join_res ---->  ', msg)
+    })
+
+    function leaveRoom() {
+        var input = document.getElementById("nameText")
+        // 请求退出房间
+        socket.emit('leave', {
+            username: input.value,
+        }, (is_leave) => {
+            if (is_leave) { alert('you have left !') }
+        })
+    }
+
+    socket.on('leave_res', (msg) => {
+        console.log('leave_res ---->  ', msg)
+    })
+
+    function openWSconnect() {
+        socket.connect()
+        // socket.open()
+    }
+
+    function closeWebSocket() {
+        socket.disconnect()
+        // socket.close()
+        console.log('socket status is ', socket.connected)
+    }
+
+</script>
+</body>
+</html>

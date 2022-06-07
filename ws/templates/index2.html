@@ -17,17 +17,35 @@
     </ul>
 
 <script type="text/javascript" charset="utf-8">
-    // 建立ws连接
-    var ws;
-    ws = new WebSocket("ws://127.0.0.1:5000/namespace")
+    // 创建ws连接
+    var ws_text = document.location.protocol == 'https:' ? 'wss' : 'ws';
+    websocket_url = ws_text + '://' + window.location.host + '/chat/';
+    var ws = new WebSocket(websocket_url)
+
+    // 连接时触发
+    ws.onopen = (event) => {
+        alert('connected !!!')
+        console.log('client connected ---- ', event)
+    }
 
     // 接收到来自server端的数据时触发
-    ws.onmessage = function (event) {
+    ws.onmessage = (event) => {
         var messages = document.getElementById('messages')
         var message = document.createElement('li')
         var content = document.createTextNode(event.data)
         message.appendChild(content)
         messages.appendChild(message)
+    };
+
+    // 指定报错时的回调
+    ws.onerror = function(event) {
+        console.log('connect error ---- ', event)
+    };
+
+
+    // 连接关闭时触发
+    ws.onclose = function(event) {
+        console.log('client disconnected ---- ', event)
     };
 
     // 发送
@@ -41,7 +59,7 @@
     }
 
     function openWSConnect() {
-        ws = new WebSocket("ws://localhost:5000")
+        // ws = new WebSocket("ws://localhost:5000/namespace")
     }
 
     function closeWSConnect() {

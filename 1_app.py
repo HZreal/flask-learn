@@ -43,3 +43,25 @@ def hello_world():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)
+
+
+    # TODO Flask 处理高并发、多线程
+
+    # 一、通过设置app.run()的参数，来达到多线程的效果
+    # 1.threaded : 多线程支持，默认为False，即不开启多线程;
+    # app.run(threaded=True)
+    # 2.processes：进程数量，默认为1.
+    # app.run(processes=True)
+    # ps：多进程或多线程只能选择一个，不能同时开启
+
+    # 二、使用genvent做协程，解决高并发
+    # from genvent.wsgi import WSGIServer
+
+    # 三、通过Guicorn(with genvent)的形式来对app进行包装，来启动服务
+    # 启动命令
+    # gunicorn - c gun.py thread_explore: app
+    # gun.py是gunicorn的配置文件
+
+
+
+
