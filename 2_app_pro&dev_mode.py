@@ -38,3 +38,32 @@ def hello_world():
 # if __name__ == '__main__':
 #     app.run()
 
+
+# Flask开发模式启动，使用的是werkzeug工具包里的WSGI服务器，仅开发使用，
+# Flask生产模式启动，可使用uWSGI服务器、Gunicorn服务器
+
+
+# Flask提高并发、多线程启动的方式
+# 一、通过设置app.run()的参数，来达到多线程的效果       ---------------> 基于开发模式下的WSGI服务器
+# 1.threaded : 多线程支持，默认为False，即不开启多线程;
+# app.run(threaded=True)
+# 2.processes：进程数量，默认为1.
+# app.run(processes=True)
+# ps：多进程或多线程只能选择一个，不能同时开启
+
+# 二、使用gevent做协程，解决高并发                   ---------------> 基于genvent的WSGIServer
+# from gevent.wsgi import WSGIServer
+
+# 三、通过Gunicorn(with gevent)的形式来对app进行包装，来启动服务       ---------------> 基于Gunicorn
+# 启动命令
+# gunicorn - c gunicorn_conf.py wsgi:app
+# gun.py是gunicorn的配置文件
+
+# 四、通过uWSGI Server
+
+
+
+
+
+
+
