@@ -1,0 +1,201 @@
+2022-06-09 17:13:50,167 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-09 17:13:50,171 INFO RPC interface 'supervisor' initialized
+2022-06-09 17:13:50,172 INFO daemonizing the supervisord process
+2022-06-09 17:13:50,172 INFO supervisord started with pid 2028
+2022-06-09 17:13:51,177 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:13:52,181 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:13:54,186 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:13:57,192 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:13:57,192 INFO gave up: wsgi entered FATAL state, too many start retries too quickly
+2022-06-09 17:38:28,294 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-09 17:38:28,299 INFO RPC interface 'supervisor' initialized
+2022-06-09 17:38:28,300 INFO daemonizing the supervisord process
+2022-06-09 17:38:28,301 INFO supervisord started with pid 2194
+2022-06-09 17:38:29,304 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:38:30,308 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:38:32,313 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:38:35,319 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:38:35,320 INFO gave up: wsgi entered FATAL state, too many start retries too quickly
+2022-06-09 17:40:58,945 ERRO 127.0.0.1:Server Error: <class 'IsADirectoryError'>, [Errno 21] Is a directory: '/Users/hz/Desktop/hz/Flask/flask-learn/logs/program_log/': file: /Users/hz/Desktop/envs/flask-learn/lib/python3.9/site-packages/supervisor/http.py line: 670
+2022-06-09 17:41:07,521 ERRO 127.0.0.1:Server Error: <class 'IsADirectoryError'>, [Errno 21] Is a directory: '/Users/hz/Desktop/hz/Flask/flask-learn/logs/program_log/': file: /Users/hz/Desktop/envs/flask-learn/lib/python3.9/site-packages/supervisor/http.py line: 670
+2022-06-09 17:43:10,285 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:43:10,293 ERRO 127.0.0.1:51625 - - [09/Jun/2022:09:43:10 +0800] "GET /?message=ERROR%3A%20Process%20wsgi%3A%20spawn%20error HTTP/1.1" 200 2794
+2022-06-09 17:43:11,296 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:43:13,300 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:43:16,271 ERRO 127.0.0.1:Server Error: <class 'IsADirectoryError'>, [Errno 21] Is a directory: '/Users/hz/Desktop/hz/Flask/flask-learn/logs/program_log/': file: /Users/hz/Desktop/envs/flask-learn/lib/python3.9/site-packages/supervisor/http.py line: 670
+2022-06-09 17:43:17,274 INFO spawnerr: unknown error making dispatchers for 'wsgi': EISDIR
+2022-06-09 17:43:17,275 INFO gave up: wsgi entered FATAL state, too many start retries too quickly
+2022-06-09 17:43:21,704 ERRO 127.0.0.1:Server Error: <class 'IsADirectoryError'>, [Errno 21] Is a directory: '/Users/hz/Desktop/hz/Flask/flask-learn/logs/program_log/': file: /Users/hz/Desktop/envs/flask-learn/lib/python3.9/site-packages/supervisor/http.py line: 670
+2022-06-09 17:43:51,400 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-09 17:43:51,404 INFO RPC interface 'supervisor' initialized
+2022-06-09 17:43:51,405 INFO daemonizing the supervisord process
+2022-06-09 17:43:51,406 INFO supervisord started with pid 2249
+2022-06-09 17:43:52,412 INFO spawned: 'wsgi' with pid 2252
+2022-06-09 17:43:52,612 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 17:43:52,829 ERRO 127.0.0.1:51736 - - [09/Jun/2022:09:43:52 +0800] "GET /?message=ERROR%3A%20Process%20wsgi%3A%20spawn%20error HTTP/1.1" 200 2792
+2022-06-09 17:43:53,137 ERRO 127.0.0.1:51736 - - [09/Jun/2022:09:43:53 +0800] "GET /?message=ERROR%3A%20Process%20wsgi%3A%20spawn%20error HTTP/1.1" 200 2792
+2022-06-09 17:43:54,144 INFO spawned: 'wsgi' with pid 2263
+2022-06-09 17:43:54,330 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 17:43:54,931 ERRO 127.0.0.1:51736 - - [09/Jun/2022:09:43:54 +0800] "GET /?message=ERROR%3A%20Process%20wsgi%3A%20spawn%20error HTTP/1.1" 200 2792
+2022-06-09 17:43:56,937 INFO spawned: 'wsgi' with pid 2269
+2022-06-09 17:43:57,103 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 17:44:00,547 INFO spawned: 'wsgi' with pid 2273
+2022-06-09 17:44:00,731 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 17:44:00,732 INFO gave up: wsgi entered FATAL state, too many start retries too quickly
+2022-06-09 18:04:51,642 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-09 18:04:51,644 INFO RPC interface 'supervisor' initialized
+2022-06-09 18:04:51,644 INFO supervisord started with pid 2249
+2022-06-09 18:04:52,650 INFO spawned: 'wsgi' with pid 2417
+2022-06-09 18:04:53,799 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:04:57,859 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:04:58,867 INFO spawned: 'wsgi' with pid 2424
+2022-06-09 18:05:00,030 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:05:04,098 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:05:05,105 INFO spawned: 'wsgi' with pid 2425
+2022-06-09 18:05:06,257 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:05:10,324 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:05:11,331 INFO spawned: 'wsgi' with pid 2427
+2022-06-09 18:05:12,470 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:05:16,528 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:05:17,535 INFO spawned: 'wsgi' with pid 2428
+2022-06-09 18:05:18,676 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:05:22,734 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:05:23,740 INFO spawned: 'wsgi' with pid 2431
+2022-06-09 18:05:24,888 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:05:28,951 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:05:29,955 INFO spawned: 'wsgi' with pid 2434
+2022-06-09 18:05:31,099 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:05:35,161 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:05:36,168 INFO spawned: 'wsgi' with pid 2437
+2022-06-09 18:05:37,301 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:05:41,335 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:05:42,339 INFO spawned: 'wsgi' with pid 2440
+2022-06-09 18:05:43,489 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:05:47,559 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:05:48,565 INFO spawned: 'wsgi' with pid 2441
+2022-06-09 18:05:49,716 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:05:53,783 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:05:54,790 INFO spawned: 'wsgi' with pid 2442
+2022-06-09 18:05:55,931 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:05:59,995 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:06:01,001 INFO spawned: 'wsgi' with pid 2443
+2022-06-09 18:06:02,139 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:06:06,210 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:06:07,216 INFO spawned: 'wsgi' with pid 2448
+2022-06-09 18:06:08,435 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:07:41,367 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-09 18:07:41,371 INFO RPC interface 'supervisor' initialized
+2022-06-09 18:07:41,372 INFO daemonizing the supervisord process
+2022-06-09 18:07:41,372 INFO supervisord started with pid 2478
+2022-06-09 18:07:42,377 INFO spawned: 'wsgi' with pid 2481
+2022-06-09 18:07:43,586 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:09:15,729 INFO waiting for wsgi to stop
+2022-06-09 18:09:15,966 INFO stopped: wsgi (exit status 0)
+2022-06-09 18:09:36,707 INFO spawned: 'wsgi' with pid 2504
+2022-06-09 18:09:37,969 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:13:55,498 INFO waiting for wsgi to stop
+2022-06-09 18:13:56,556 INFO stopped: wsgi (exit status 0)
+2022-06-09 18:14:19,903 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-09 18:14:19,904 INFO RPC interface 'supervisor' initialized
+2022-06-09 18:14:19,904 INFO supervisord started with pid 2478
+2022-06-09 18:14:20,910 INFO spawned: 'wsgi' with pid 2550
+2022-06-09 18:14:21,108 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 18:14:22,110 INFO spawned: 'wsgi' with pid 2558
+2022-06-09 18:14:22,265 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 18:14:24,299 INFO spawned: 'wsgi' with pid 2563
+2022-06-09 18:14:24,482 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 18:14:27,492 INFO spawned: 'wsgi' with pid 2566
+2022-06-09 18:14:27,679 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 18:14:28,680 INFO gave up: wsgi entered FATAL state, too many start retries too quickly
+2022-06-09 18:16:43,986 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-09 18:16:43,993 INFO RPC interface 'supervisor' initialized
+2022-06-09 18:16:43,994 INFO supervisord started with pid 2478
+2022-06-09 18:16:45,000 INFO spawned: 'wsgi' with pid 2597
+2022-06-09 18:16:45,198 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:16:46,202 INFO spawned: 'wsgi' with pid 2599
+2022-06-09 18:16:46,385 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:16:49,341 INFO spawned: 'wsgi' with pid 2604
+2022-06-09 18:16:49,545 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:16:52,755 INFO spawned: 'wsgi' with pid 2605
+2022-06-09 18:16:52,950 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:16:53,952 INFO gave up: wsgi entered FATAL state, too many start retries too quickly
+2022-06-09 18:17:04,325 INFO spawned: 'wsgi' with pid 2607
+2022-06-09 18:17:04,526 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:17:05,530 INFO spawned: 'wsgi' with pid 2608
+2022-06-09 18:17:05,728 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:17:06,743 ERRO 127.0.0.1:52348 - - [09/Jun/2022:10:17:06 +0800] "GET /?message=ERROR%3A%20Process%20wsgi%3A%20spawn%20error HTTP/1.1" 200 2792
+2022-06-09 18:17:07,748 INFO spawned: 'wsgi' with pid 2609
+2022-06-09 18:17:07,947 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:17:10,956 INFO spawned: 'wsgi' with pid 2610
+2022-06-09 18:17:11,152 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:17:12,153 INFO gave up: wsgi entered FATAL state, too many start retries too quickly
+2022-06-09 18:17:57,826 ERRO 127.0.0.1:52348 - - [09/Jun/2022:10:17:57 +0800] "GET /?message=ERROR%3A%20Process%20wsgi%3A%20spawn%20error HTTP/1.1" 200 2821
+2022-06-09 18:22:12,866 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-09 18:22:12,870 INFO RPC interface 'supervisor' initialized
+2022-06-09 18:22:12,871 INFO daemonizing the supervisord process
+2022-06-09 18:22:12,871 INFO supervisord started with pid 2669
+2022-06-09 18:22:13,874 INFO spawned: 'wsgi' with pid 2672
+2022-06-09 18:22:14,877 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:26:03,013 INFO waiting for wsgi to stop
+2022-06-09 18:26:03,753 INFO stopped: wsgi (exit status 0)
+2022-06-09 18:26:16,689 INFO spawned: 'wsgi' with pid 2715
+2022-06-09 18:26:17,692 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:26:30,299 INFO waiting for wsgi to stop
+2022-06-09 18:26:31,242 INFO stopped: wsgi (exit status 0)
+2022-06-09 18:27:00,212 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-09 18:27:00,213 INFO RPC interface 'supervisor' initialized
+2022-06-09 18:27:00,213 INFO supervisord started with pid 2669
+2022-06-09 18:27:01,218 INFO spawned: 'wsgi' with pid 2733
+2022-06-09 18:27:02,220 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:27:14,671 INFO waiting for wsgi to stop
+2022-06-09 18:27:15,721 INFO stopped: wsgi (exit status 0)
+2022-06-09 18:27:41,602 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-09 18:27:41,609 INFO RPC interface 'supervisor' initialized
+2022-06-09 18:27:41,609 INFO supervisord started with pid 2669
+2022-06-09 18:27:42,615 INFO spawned: 'wsgi' with pid 2758
+2022-06-09 18:27:42,789 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 18:27:43,794 INFO spawned: 'wsgi' with pid 2767
+2022-06-09 18:27:43,964 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 18:27:46,309 INFO spawned: 'wsgi' with pid 2773
+2022-06-09 18:27:46,487 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 18:27:49,853 INFO spawned: 'wsgi' with pid 2776
+2022-06-09 18:27:50,034 INFO exited: wsgi (exit status 0; not expected)
+2022-06-09 18:27:51,036 INFO gave up: wsgi entered FATAL state, too many start retries too quickly
+2022-06-09 18:28:17,165 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-09 18:28:17,172 INFO RPC interface 'supervisor' initialized
+2022-06-09 18:28:17,172 INFO supervisord started with pid 2669
+2022-06-09 18:28:18,176 INFO spawned: 'wsgi' with pid 2796
+2022-06-09 18:28:18,378 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:28:20,151 INFO spawned: 'wsgi' with pid 2801
+2022-06-09 18:28:20,345 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:28:22,527 INFO spawned: 'wsgi' with pid 2802
+2022-06-09 18:28:22,718 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:28:25,725 INFO spawned: 'wsgi' with pid 2805
+2022-06-09 18:28:25,915 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:28:26,916 INFO gave up: wsgi entered FATAL state, too many start retries too quickly
+2022-06-09 18:28:33,843 INFO spawned: 'wsgi' with pid 2812
+2022-06-09 18:28:34,039 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:28:35,043 INFO spawned: 'wsgi' with pid 2813
+2022-06-09 18:28:35,243 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:28:36,253 ERRO 127.0.0.1:52444 - - [09/Jun/2022:10:28:36 +0800] "GET /?message=ERROR%3A%20Process%20wsgi%3A%20spawn%20error HTTP/1.1" 200 2792
+2022-06-09 18:28:37,260 INFO spawned: 'wsgi' with pid 2814
+2022-06-09 18:28:37,454 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:28:40,464 INFO spawned: 'wsgi' with pid 2815
+2022-06-09 18:28:40,657 INFO exited: wsgi (exit status 1; not expected)
+2022-06-09 18:28:41,658 INFO gave up: wsgi entered FATAL state, too many start retries too quickly
+2022-06-09 18:29:06,242 INFO spawned: 'wsgi' with pid 2824
+2022-06-09 18:29:07,245 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-09 18:31:59,321 INFO waiting for wsgi to stop
+2022-06-09 18:32:00,068 INFO stopped: wsgi (exit status 0)
+2022-06-15 18:10:46,725 INFO Included extra file "/Users/hz/Desktop/hz/Flask/flask-learn/deploy/supervisor_include/program_gunicorn.conf" during parsing
+2022-06-15 18:10:46,778 INFO RPC interface 'supervisor' initialized
+2022-06-15 18:10:46,779 INFO daemonizing the supervisord process
+2022-06-15 18:10:46,780 INFO supervisord started with pid 42834
+2022-06-15 18:10:47,785 INFO spawned: 'wsgi' with pid 43657
+2022-06-15 18:10:48,787 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-15 18:17:03,761 INFO waiting for wsgi to stop
+2022-06-15 18:17:04,501 INFO stopped: wsgi (exit status 0)
+2022-06-15 18:17:04,503 INFO spawned: 'wsgi' with pid 32040
+2022-06-15 18:17:05,505 INFO success: wsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2022-06-15 19:28:30,419 INFO waiting for wsgi to stop
+2022-06-15 19:28:31,290 INFO stopped: wsgi (exit status 0)
