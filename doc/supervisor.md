@@ -75,3 +75,8 @@ supervisorctl
 > restart process:*               # 重启 process组 程序
 
 ```
+
+
+## FAQ
+在/etc/supervisord.d/中自定义配置文件demo.conf，重启supervisorctl reload报错：Supervisor FATAL/BACKOFF Exited too quickly (process log may have details)
+解决办法：在demo.conf中添加startsecs=0即可, 详情https://github.com/Supervisor/supervisor/issues/212
