@@ -21,9 +21,9 @@ COPY . /app
 WORKDIR /app
 
 # 环境变量
-FLASK_APP = docker_app.py
-FLASK_ENV = development
-FLASK_DEBUG = 0
+ENV FLASK_APP = docker_app.py
+ENV FLASK_ENV = development
+ENV FLASK_DEBUG = 0
 
 # 暴露服务端口
 EXPOSE 5000
