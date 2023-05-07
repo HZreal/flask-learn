@@ -21,9 +21,12 @@ COPY . /app
 WORKDIR /app
 
 # 环境变量
+FLASK_APP = docker_app.py
+FLASK_ENV = development
+FLASK_DEBUG = 0
 
 # 暴露服务端口
 EXPOSE 5000
 
 # 启动 Flask 服务
-CMD ["python3", "3_app_route.py"]
+CMD ["python", "-m", "flask", "run", "--host=0.0.0.0", "--port=5000"]
